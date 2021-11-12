@@ -1,0 +1,14 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/health":
+    get:
+      summary: check health
+      tags:
+      - Health
+      responses:
+        '200':
+          description: Health ok

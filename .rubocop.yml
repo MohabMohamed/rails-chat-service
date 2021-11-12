@@ -1,0 +1,47 @@
+AllCops:
+  RubyInterpreters:
+    - ruby
+  Include:
+    - '**/*.rb'
+    - '**/*.arb'
+    - '**/*.gemfile'
+    - '**/*.gemspec'
+  Exclude:
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - '.git/**/*'
+    - 'bin/**/*'
+  DefaultFormatter: progress
+  DisplayCopNames: true
+  DisplayStyleGuide: false
+  StyleGuideBaseURL: https://rubystyle.guide
+  ExtraDetails: true
+  SuggestExtensions:
+    rubocop-rails: [rails]
+    rubocop-rspec: [rspec, rspec-rails]
+    rubocop-rake: [rake]
+Bundler/DuplicatedGem:
+  Description: 'Checks for duplicate gem entries in Gemfile.'
+  Enabled: true
+  Include:
+    - '**/*.gemfile'
+    - '**/Gemfile'
+    - '**/gems.rb'
+Bundler/OrderedGems:
+  Description: >-
+                 Gems within groups in the Gemfile should be alphabetically sorted.
+  Enabled: true
+  Include:
+    - '**/*.gemfile'
+    - '**/Gemfile'
+    - '**/gems.rb'
+Style/Documentation:
+  Enabled: false
+Naming/FileName:
+  Enabled: true
+  Include:
+    - '**/*.rb'
+    - '**/*.arb'
+  Exclude:
+    - '**/config/initializers/rswag-ui.rb'
