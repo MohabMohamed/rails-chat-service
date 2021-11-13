@@ -45,3 +45,5 @@ Naming/FileName:
     - '**/*.arb'
   Exclude:
     - '**/config/initializers/rswag-ui.rb'
+Style/FrozenStringLiteralComment:
+  Enabled: false
