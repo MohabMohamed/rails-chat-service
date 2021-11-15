@@ -19,7 +19,7 @@ RUN apk add --update \
   && rm -rf /var/cache/apk/*
 RUN bundle install --without development test
 EXPOSE 3000
-CMD ["bundle", "exec", "rails", "s", "-p", "3000"]
+CMD ["bundle", "exec", "rails", "s","-b","0.0.0.0", "-p", "3000"]
 
 FROM ruby:2.7.4-alpine3.13 AS development
 WORKDIR /app
@@ -33,4 +33,4 @@ RUN apk add --update \
 RUN bundle install --with development test
 VOLUME /app
 EXPOSE 3000
-CMD ["bundle", "exec", "rails", "s", "-p", "3000"]
+CMD ["bundle", "exec", "rails", "s","-b","0.0.0.0", "-p", "3000"]
