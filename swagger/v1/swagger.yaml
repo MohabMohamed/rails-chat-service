@@ -4,11 +4,81 @@ info:
   title: API V1
   version: v1
 paths:
-  "/api/v1/health":
-    get:
-      summary: check health
+  "/api/v1/applications":
+    post:
+      summary: Creates an application
       tags:
-      - Health
+      - Application
+      parameters: []
+      responses:
+        '201':
+          description: Application created
+        '400':
+          description: Can't proccess parameters
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+              required: name
+  "/api/v1/applications/{token}":
+    parameters:
+    - name: token
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Get an application
+      tags:
+      - Application
       responses:
         '200':
-          description: Health ok
+          description: Application found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  token:
+                    type: string
+    patch:
+      summary: change name of an application
+      tags:
+      - Application
+      parameters: []
+      responses:
+        '200':
+          description: Application Edited
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  token:
+                    type: string
+        '400':
+          description: Can't proccess parameters
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+              required: name
+    delete:
+      summary: Delete an application
+      tags:
+      - Application
+      responses:
+        '204':
+          description: Application deleted

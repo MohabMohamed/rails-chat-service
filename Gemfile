@@ -31,6 +31,7 @@ gem 'bootsnap', require: false
 
 gem 'rswag'
 gem 'rspec', '~> 3.10'
+gem 'securerandom'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -40,6 +41,7 @@ group :development, :test do
   gem 'rubocop-rspec', '~> 2.6'
   gem 'rubocop-rake', '~> 0.6.0'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot_rails'
 end
 
 group :development do

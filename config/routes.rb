@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'health', to: 'health#check'
+      scope '/applications' do
+        post '/', to: 'applications#create'
+        get  '/:token', to: 'applications#show'
+        patch '/:token', to: 'applications#update'
+        delete '/:token', to: 'applications#destroy'
+      end
       mount Rswag::Ui::Engine => '/api-docs'
       mount Rswag::Api::Engine => '/api-docs'
     end

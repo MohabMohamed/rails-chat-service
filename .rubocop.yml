@@ -12,6 +12,7 @@ AllCops:
     - 'vendor/**/*'
     - '.git/**/*'
     - 'bin/**/*'
+    - 'db/schema.rb'
   DefaultFormatter: progress
   DisplayCopNames: true
   DisplayStyleGuide: false
@@ -47,3 +48,7 @@ Naming/FileName:
     - '**/config/initializers/rswag-ui.rb'
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
