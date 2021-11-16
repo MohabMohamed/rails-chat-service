@@ -1,6 +1,6 @@
 module Api
   module V1
-    class ChatssController < ApplicationController
+    class ChatsController < ApplicationController
       before_action :set_chat, only: %i[show destroy]
       before_action :set_chats, only: %i[index]
 

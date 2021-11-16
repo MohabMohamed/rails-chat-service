@@ -12,6 +12,12 @@ Rails.application.routes.draw do
           get '/', to: 'chats#index'
           get '/:chat_num', to: 'chats#show'
           delete '/:chat_num', to: 'chats#destroy'
+          scope '/:chat_num/messages' do
+            get '/', to: 'messages#index'
+            get '/:message_num', to: 'messages#show'
+            delete '/:message_num', to: 'messages#destroy'
+            patch '/:message_num', to: 'messages#update'
+          end
         end
       end
       mount Rswag::Ui::Engine => '/api-docs'

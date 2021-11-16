@@ -52,3 +52,5 @@ Style/FrozenStringLiteralComment:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
+Metrics/AbcSize:
+  Enabled: false

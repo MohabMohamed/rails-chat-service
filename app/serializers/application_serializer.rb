@@ -6,7 +6,8 @@ class ApplicationSerializer
   def as_json
     {
       token: application.token,
-      name: application.name
+      name: application.name,
+      chat_count: application.chat_count
     }
   end
 
