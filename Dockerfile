@@ -18,6 +18,7 @@ RUN apk add --update \
   tzdata \
   && rm -rf /var/cache/apk/*
 RUN bundle install --without development test
+RUN whenever --update-crontab
 EXPOSE 3000
 CMD ["bundle", "exec", "rails", "s","-b","0.0.0.0", "-p", "3000"]
 
@@ -32,5 +33,6 @@ RUN apk add --update \
   tzdata \
   && rm -rf /var/cache/apk/*
 RUN bundle install --with development test
+RUN whenever --update-crontab
 EXPOSE 3000
 CMD ["bundle", "exec", "rails", "s","-b","0.0.0.0", "-p", "3000"]

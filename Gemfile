@@ -32,6 +32,8 @@ gem 'bootsnap', require: false
 gem 'rswag'
 gem 'rspec', '~> 3.10'
 gem 'securerandom'
+gem 'chronic', '~> 0.10.2'
+gem 'whenever', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
