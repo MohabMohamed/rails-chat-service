@@ -7,6 +7,12 @@ Rails.application.routes.draw do
         get  '/:token', to: 'applications#show'
         patch '/:token', to: 'applications#update'
         delete '/:token', to: 'applications#destroy'
+
+        scope '/:token/chats' do
+          get '/', to: 'chats#index'
+          get '/:chat_num', to: 'chats#show'
+          delete '/:chat_num', to: 'chats#destroy'
+        end
       end
       mount Rswag::Ui::Engine => '/api-docs'
       mount Rswag::Api::Engine => '/api-docs'
