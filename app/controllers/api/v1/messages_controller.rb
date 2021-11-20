@@ -35,7 +35,7 @@ module Api
         @chat = Chat.find_by(per_app_id: params[:chat_num])
         head :not_found if @chat.nil?
 
-        @message = Message.find_by(per_chat_id: params[:message_num])
+        @message = Message.find_by(chat_id: @chat.id ,per_chat_id: params[:message_num])
         head :not_found if @message.nil?
       end
     end
