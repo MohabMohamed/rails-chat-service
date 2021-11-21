@@ -14,6 +14,7 @@ Rails.application.routes.draw do
           delete '/:chat_num', to: 'chats#destroy'
           scope '/:chat_num/messages' do
             get '/', to: 'messages#index'
+            get '/search', to: 'messages#search'
             get '/:message_num', to: 'messages#show'
             delete '/:message_num', to: 'messages#destroy'
             patch '/:message_num', to: 'messages#update'
